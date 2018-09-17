@@ -1,0 +1,53 @@
+﻿@model IEnumerable<LocalLeague1.Models.ViewModels.MatchesViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Match Index</h2>
+<hr/>
+<a href="~/Matches/Create" class="btn btn-default" style="color: white; background-color: green;">
+  Add a Match
+</a>
+<hr/>
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-3" style="text-align: center;">
+
+        <h6 style="color: yellow; background-color: black; padding: 1%;">
+        @Html.DisplayFor(modelItem => item.Leagues.LeagueName)</h6>
+
+        <hr />
+
+
+        <h6 style="color: black;">@Html.DisplayFor(modelItem => item.Matches.HomeTeamName)</h6>
+        <h6 style="background-color:black; color: white;">
+            @Html.DisplayFor(modelItem => item.Matches.HomeGoals)
+        </h6>
+        <h6 style="color: black">v</h6>
+        <h6 style="background-color:black; color: white;">
+            @Html.DisplayFor(modelItem => item.Matches.AwayGoals)
+        </h6>
+        <h6 style="color: black;">
+            @Html.DisplayFor(modelItem => item.Matches.AwayTeamName)
+        </h6>
+        <hr />
+        <h6 style="color: white; background-color: green; padding: 1%;"> @Html.DisplayFor(modelItem => item.Venues.VenueName)</h6>
+        <h6 style="color: white; background-color: black; padding: 1%;"><img src="~/Content/Images/whistle.png" width="30" alt="Alternate Text" /> @Html.DisplayFor(modelItem => item.Referee.RefName)</h6>
+        <h6 style="color: black;">
+          Match Date: @Html.DisplayFor(modelItem => item.Matches.MatchDate)
+        </h6>
+
+        <button class="btn btn-default"> @Html.ActionLink("Edit", "Edit", new { id = item.Matches.MatchId }) </button>
+        <button class="btn btn-default">
+            @Html.ActionLink("Details", "Details", new { id = item.Matches.MatchId })
+        </button>
+        <button class="btn btn-default"> @Html.ActionLink("Delete", "Delete", new { id = item.Matches.MatchId })</button>
+
+    </div>
+    }
+</div>
+
+

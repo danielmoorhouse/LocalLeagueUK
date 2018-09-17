@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LocalLeague1.Models.LeagueOps>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        h5, h2 {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <p style="margin-top: 3%;">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <h2>League Operators</h2>
+   <div class="row">
+
+
+        @foreach (var item in Model)
+        {
+       <div class="col-md-4">
+
+           <h5> @Html.DisplayFor(modelItem => item.LeagueOpsName) </h5>
+
+
+           @if (item.LeagueOpsLogoUrl != null)
+           {
+               <img src="@Url.Content(item.LeagueOpsLogoUrl)" width="100" />
+           }
+
+           @Html.ActionLink("Edit", "Edit", new { id = item.LeagueOpsId }) |
+           @Html.ActionLink("Details", "Details", new { id = item.LeagueOpsId }) |
+           @Html.ActionLink("Delete", "Delete", new { id = item.LeagueOpsId })
+       </div>
+        }
+
+    </div>
+</body>
+</html>

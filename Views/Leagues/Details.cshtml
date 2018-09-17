@@ -1,0 +1,42 @@
+﻿@model LocalLeague1.Models.Leagues
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Leagues</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LeagueName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LeagueName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LeagueOperator)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LeagueOperator)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LeagueId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

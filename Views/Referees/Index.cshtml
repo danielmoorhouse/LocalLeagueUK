@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LocalLeague1.Models.ViewModels.RefViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.referee.RefName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <h6 style="color: black;"> @Html.DisplayFor(modelItem => item.referee.RefName)</h6>
+        </td>
+        <td>
+            <h6 style="color: black;">  @Html.DisplayFor(modelItem => item.matches.HomeTeamName) v  @Html.DisplayFor(modelItem => item.matches.AwayTeamName)</h6>
+        </td>
+        <td>
+            <h6 style="color: black;"> @Html.DisplayFor(modelItem => item.matches.MatchDate)</h6>
+</td>
+        <td>
+            <h6 style="color: black;"> @Html.DisplayFor(modelItem => item.venues.VenueName)</h6>
+</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.referee.RefId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.referee.RefId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.referee.RefId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <style>
+        .bg-league-red {
+            background-color: darkred;
+        }
+
+        .wrapper {
+            display: flex;
+            width: 100%;
+        }
+        
+        #sidebar {
+            width: 170px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 999;
+            background: darkred;
+            color: #fff;
+            transition: all 0.3s;
+            margin-right: 3%;
+            
+        }
+
+        .administrator {
+            color: white;
+        }
+
+        .admin {
+            color: white;
+            border-bottom: 2px solid white;
+            list-style-type: none;
+        }
+
+        .nav-link:hover {
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+<body class="admin">
+ 
+    
+        
+            <!-- Sidebar -->
+            <nav id="sidebar">
+
+
+
+                <ul style="margin-top: 25%;">
+                    <li class="nav-item admin"><a href="/Teams/Index" class="nav-link administrator"><i class="far fa-eye"></i> Teams</a></li>
+                    <li class="nav-item admin"><a href="/Teams/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> Team</a></li>
+                    <li class="nav-item admin"><a href="/Clubs/Index" class="nav-link administrator"><i class="far fa-eye"></i> Clubs</a></li>
+                    <li class="nav-item admin"><a href="/Clubs/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> Club</a></li>
+                    <li class="nav-item admin"><a href="/LeagueOps/Index" class="nav-link administrator"><i class="far fa-eye"></i> League Operators</a></li>
+                    <li class="nav-item admin"><a href="/LeagueOps/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> League Operator</a></li>
+                    <li class="nav-item admin"><a href="/Leagues/Index" class="nav-link administrator"><i class="far fa-eye"></i> Leagues</a></li>
+                    <li class="nav-item admin"><a href="/Leagues/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> League</a></li>
+                    <li class="nav-item admin"><a href="/Matches/Index" class="nav-link administrator"><i class="far fa-eye"></i> Matches</a></li>
+                    <li class="nav-item admin"><a href="/Matches/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> Fixture</a></li>
+                    <li class="nav-item admin"><a href="/Referees/Index" class="nav-link administrator"><i class="far fa-eye"></i> Referees</a></li>
+                    <li class="nav-item admin"><a href="/Referees/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> Referee</a></li>
+                    <li class="nav-item admin"><a href="/Venues/Index" class="nav-link administrator"><i class="far fa-eye"></i> Venues</a></li>
+                    <li class="nav-item admin"><a href="/Venues/Create" class="nav-link administrator"><i class="far fa-plus-square"></i> Venue</a></li>
+                    <li class="nav-item admin"><a href="/Home/Index" class="nav-link administrator"><i class="fas fa-caret-square-left"></i> Home</a></li>
+                </ul>
+            </nav>
+ 
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p style="color: black;">&copy; @DateTime.Now.Year - Daniel Moorhouse - <a href="www.bigdigitalmedia.com">BigDigitalMedia.com</a></p>
+        </footer>
+    </div>
+   
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@model LocalLeague1.Models.Venues
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Venues</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenuePcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenuePcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VenueMap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VenueMap)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VenueId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

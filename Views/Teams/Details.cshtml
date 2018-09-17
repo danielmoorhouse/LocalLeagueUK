@@ -1,0 +1,62 @@
+﻿@model LocalLeague1.Models.ViewModels.TeamProfViewModel
+
+@{
+                /**/
+
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+
+        <hr />
+
+
+        @Html.DisplayFor(model => Model.Leagues.LeagueName)
+
+
+        @Html.DisplayFor(model => Model.Clubs.ClubName)
+
+
+        <p style="color: black;">  @Html.DisplayFor(model => Model.Teams.TeamName)</p>
+
+
+
+
+
+        @Html.DisplayFor(model => Model.Teams.Coach1)
+
+
+
+        @Html.DisplayFor(model => Model.Teams.Coach2)
+        @Html.DisplayFor(model => Model.Teams.Coach3)
+
+
+
+       
+
+       
+            @Html.DisplayFor(model => Model.Matches.HomeTeamName)
+
+            @Html.DisplayFor(model => Model.Matches.HomeGoals) 
+
+           @Html.DisplayFor(model => Model.Matches.AwayGoals)
+
+           @Html.DisplayFor(model => Model.Matches.AwayTeamName)
+
+        @Html.DisplayFor(model => Model.Players.PlayerName)
+
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

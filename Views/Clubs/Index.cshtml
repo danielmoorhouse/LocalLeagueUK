@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LocalLeague1.Models.Clubs>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p style="margin-top: 5%;">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+   
+    <div class="row" style="margin-top: 3%;">
+        @foreach (var item in Model)
+        {
+        <div class="col-md-3" style="text-align: center; margin-bottom: 3%;">
+            @if (item.ClubLogoUrl != null)
+            {
+                <img src="@Url.Content(item.ClubLogoUrl)" width="100" />
+            }<br />
+            @Html.DisplayFor(modelItem => item.ClubName) <br />
+
+            @Html.DisplayFor(modelItem => item.ClubAddress1)<br />
+
+            @Html.DisplayFor(modelItem => item.ClubAddress2)<br />
+
+            @Html.DisplayFor(modelItem => item.PostCode)<br />
+
+
+
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.ClubId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ClubId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ClubId })
+        </div>
+        }
+
+    </div>
+</body>
+</html>

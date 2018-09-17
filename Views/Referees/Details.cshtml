@@ -1,0 +1,27 @@
+﻿@model LocalLeague1.Models.Referee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Referee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RefName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RefName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RefId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

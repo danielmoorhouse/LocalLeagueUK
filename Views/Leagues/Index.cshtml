@@ -1,0 +1,36 @@
+﻿@model IEnumerable<LocalLeague1.Models.ViewModels.LeagueViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p style="margin-top: 5%;">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="col-md-3" style="margin-bottom: 3%;">
+            @Html.DisplayFor(modelItem => item.LeagueOps.LeagueOpsName)<br />
+            @Html.DisplayFor(modelItem => item.Leagues.LeagueName) <br /> <br />
+
+
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.Leagues.LeagueId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Leagues.LeagueId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Leagues.LeagueId })
+        </div>
+        }
+
+    </div>
+</body>
+</html>

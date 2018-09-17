@@ -1,0 +1,67 @@
+﻿@model LocalLeague1.Models.Clubs
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Clubs</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ClubName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClubName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ClubAddress1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClubAddress1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ClubAddress2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClubAddress2)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PostCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PostCode)
+            </dd>
+            <dt>
+                @if (Model.ClubLogoUrl != null)
+                {
+                    <img src="@Url.Content(Model.ClubLogoUrl)" width="100" />
+                }
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ClubLogoUrl)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ClubId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
